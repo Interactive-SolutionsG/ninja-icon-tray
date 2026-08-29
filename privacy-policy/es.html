@@ -1,40 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidad - Ninja Icon Tray</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.8; color: #1f2937;
-            background: linear-gradient(135deg, #0b1e5b 0%, #1e40af 50%, #2563eb 100%);
-            padding: 20px; min-height: 100vh;
-        }
-        .container { max-width: 950px; margin: 0 auto; background: #fff; padding: 50px; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.18); }
-        .lang-selector { position: fixed; top: 20px; right: 20px; background: #fff; padding: 12px 20px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.12); z-index: 1000; border: 1px solid rgba(37,99,235,0.2); }
-        .lang-selector a { margin: 0 8px; text-decoration: none; color: #2563eb; font-weight: 600; font-size: 14px; padding: 5px 10px; border-radius: 5px; }
-        .lang-selector a:hover { background: #e6efff; color: #1e40af; }
-        .lang-selector a.active { background: #2563eb; color: #fff; }
-        h1 { color: #1e40af; font-size: 2.4em; margin-bottom: 10px; border-bottom: 4px solid #2563eb; padding-bottom: 20px; font-weight: 700; }
-        h2 { color: #2563eb; font-size: 1.7em; margin-top: 38px; margin-bottom: 18px; font-weight: 600; border-left: 5px solid #2563eb; padding-left: 15px; }
-        p, li { margin-bottom: 14px; text-align: justify; color: #1f2937; line-height: 1.8; }
-        ul, ol { margin-left: 32px; margin-bottom: 18px; }
-        strong { color: #1e40af; font-weight: 600; }
-        code { background: #f1f5fb; padding: 4px 10px; border-radius: 5px; font-family: 'Consolas','Monaco',monospace; font-size: 0.9em; color: #c026d3; border: 1px solid #dbe4f0; }
-        a { color: #2563eb; text-decoration: none; }
-        a:hover { color: #1e40af; border-bottom: 1px solid #1e40af; }
-        .footer { margin-top: 56px; padding-top: 28px; border-top: 2px solid #e1e8ed; text-align: center; color: #6b7280; font-size: 0.95em; }
-        @media (max-width: 768px) { .container { padding: 25px; } h1 { font-size: 1.9em; } .lang-selector { position: static; margin-bottom: 20px; text-align: center; } }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidad - Ninja Icon Tray</title>
+<!-- El icono del programa, tambien en la pestana. Va incrustado porque
+     estos documentos viajan sueltos, sin carpeta de imagenes al lado. -->
+<link rel="icon" type="image/png" sizes="64x64" href="data:image/png;base64,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">
+<style>
+:root{
+  --bg:oklch(0.17 0.012 258);--panel:oklch(0.205 0.013 258);--inset:oklch(0.145 0.012 258);
+  --border:oklch(0.31 0.016 258);--border-soft:oklch(0.255 0.014 258);
+  --ink:oklch(0.96 0.006 250);--ink-2:oklch(0.74 0.012 252);--ink-3:oklch(0.56 0.016 255);
+  --accent:oklch(0.80 0.11 250);
+  --font:"Segoe UI",system-ui,-apple-system,sans-serif;
+  --mono:ui-monospace,"Cascadia Mono","Cascadia Code",Consolas,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink-2);font-family:var(--font);font-size:16.5px;line-height:1.66;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.bar{position:sticky;top:0;z-index:10;background:var(--panel);border-bottom:1px solid var(--border-soft)}
+.bar__in{padding:7px 26px;display:flex;align-items:center;gap:16px}
+.brand{display:inline-flex;align-items:center;gap:11px;color:var(--ink);font-weight:600;font-size:14.5px}
+.brand__mark{width:34px;height:34px;border-radius:7px;object-fit:contain;display:block}
+.langs{margin-left:auto;display:flex;align-items:center;gap:13px;font-size:13px}
+.langs a{color:var(--ink-3);text-decoration:none}
+.langs a:hover{color:var(--accent)}
+.langs a.active{color:var(--ink)}
+.langs .div{width:1px;height:13px;background:var(--border)}
+.container{max-width:760px;margin:0 auto;padding:46px 28px 96px;background:none;border-radius:0;box-shadow:none}
+h1{font-size:1.6rem;line-height:1.3;font-weight:700;color:var(--ink);letter-spacing:-0.01em;margin:0 0 22px;border:none;padding:0}
+h2{font-size:1.08rem;font-weight:680;color:var(--ink);margin:44px 0 14px;padding:26px 0 0;border-top:1px solid var(--border-soft);letter-spacing:-0.004em}
+h3{font-size:1rem;font-weight:620;color:var(--ink);margin:26px 0 8px}
+p{margin:0 0 14px;text-align:left;color:var(--ink-2)}
+ul,ol{margin:0 0 17px;padding-left:22px}
+li{margin-bottom:8px;text-align:left;color:var(--ink-2)}
+li::marker{color:var(--ink-3)}
+strong{color:var(--ink);font-weight:600}
+em{color:var(--ink-3)}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent}
+a:hover{border-bottom-color:currentColor}
+.lang-selector{display:none!important}
+.meta-info{background:var(--inset);border:1px solid var(--border-soft);border-radius:10px;padding:14px 18px;margin:0 0 30px}
+.meta-info p{margin:0;font-family:var(--mono);font-size:12.5px;color:var(--ink-3);line-height:1.75}
+.meta-info strong{color:var(--ink-2);font-weight:500}
+.warning{background:oklch(0.202 0.014 258);border:1px solid var(--border);border-radius:10px;padding:18px 20px;margin:26px 0}
+.warning p{color:var(--ink-2);margin-bottom:8px}
+.warning p:last-child{margin-bottom:0}
+.warning p:first-child{color:var(--ink);font-weight:650;letter-spacing:0.02em}
+.contact{background:var(--inset);border:1px solid var(--border-soft);border-radius:10px;padding:6px 24px 22px;margin-top:36px}
+.contact h2{margin-top:22px;padding-top:0;border-top:none}
+.footer{display:block;margin-top:54px;padding-top:24px;border-top:1px solid var(--border-soft);text-align:center;color:var(--ink-3);font-size:12.5px;line-height:1.75}
+.footer p{color:var(--ink-3);margin-bottom:6px}
+.footer strong{color:var(--ink-2);font-weight:500}
+code{background:var(--inset);border:1px solid var(--border-soft);border-radius:5px;padding:2px 7px;font-family:var(--mono);font-size:0.86em;color:var(--accent)}
+pre{background:var(--inset);border:1px solid var(--border-soft);border-radius:8px;padding:14px 16px;margin:14px 0;overflow-x:auto}
+pre code{background:none;border:none;padding:0;color:var(--ink-2)}
+hr{border:none;height:1px;background:var(--border-soft);margin:24px 0}
+@media(max-width:520px){.bar__in,.container{padding-left:18px;padding-right:18px}.container{padding-top:32px}}
+</style>
 </head>
 <body>
-    <div class="lang-selector"><a href="es.html" class="active">ES</a> | <a href="pt.html">PT</a> | <a href="en.html">EN</a> | <a href="../terms-of-use/es.html">EULA</a></div>
+<header class="bar"><div class="bar__in"><span class="brand"><img class="brand__mark" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAKNklEQVR42tWaa4xdVRXHf2ufx70z97Zz59FKpx3Kw9ZYsD4wiG8xMRoqQkJKFKKomMAn0RgTMSYKH/SDMbEmJmIiAQ0+qhiJwUBUBAEFtERbnVAQaJl2pqUzc+dx752555y9lx/2uXdmmGedonUnK2duu8/Z/7X2eu21tnD6Q4AAyPwvA/G2C3DVd+D0MrBvADkXTUuooz1HojowBOYgRp7AdP+J5NgL7TkQAhZQXsURtP8qXbCZsHwTJv4tJppEAs0XX50kUEw0iYl/S1i+idIFm5dcY43SXMswgBdVx46tJMO3oMknUbcJta05DlDiihBXhKgMJs7/J4G0BsmEkkxovq7xCAIQcwqJ76Krfx/jzx1ftOY6GQgAi6pQqNxC1rgVtZvzrbdEZejaZejeJZS2Q7EXgk4wIUj+eVVwGdgGzI5B/ShUB5XJQUda82uIAQlOEXZ+nebEPkS0vfY6GAiBjLh/J9n4HWj6vlziGZ1bA7ZcLvS+BYp9uaQz0AzUetALVpJc2qFnDqA5CqNPw4k/KPXjFgj9nOhhwp6bSYYPtzH8Bwzk4HuvJJ28C1wP6jKicsC5VwmveQ+EnWBnPPDW52Slz2puojlzJoSgA7IGnHwUXvqVktYsYkIw40RdnyQZ+/VKTATLg5eMQt+nSSd+grpOUEvPG0N2fVboeZPXazs7z8tIrjKy8obLPML5b4hA5fXQ91Zh9mXDzAkLWsI1P0qhdwg7cyBnwq2FAc9toedTJBN3otZ7joErA3Z+GkzB67IYT2v2A8sx5G0ZOwthGV7zTlBrmDrsQME1r6ZQWZaJYEmDjbv3kE79FHV+ry+83rD9akjrgEOMoSVreaWas1DIbWJlQoy3HZdB31sg7BCqh7zwXHI1cdcB7OwzOUZdigHvtgoDF5KOPQBaBIULrzNs+zAkE3MSX8pAVec+61aJBEuZoRGCwGBEIJuB7t0QFoXqQUUEXHoFha2/wE6N5ViVti9uCWLv/oD05bvAVVDnGNhj2LYHkqr3IDnWYhRSjMP2UwTiMPD/FoeUijkVAkqFgM5CQEchnKM4pCMO6IgCCqEQGYU0w07NYGsJiiHIJpFtV8DAHoM6B65CevJu9u4PFmzcQtXZ8FnS+j7UZXRfHHLxF72HEEFE0NSyubfEj7/0AQpRgHVKHBk+evsD3HTlxXzobecxVU+IgkW+Z9GmtcODOmzmqM2kDB4d45G/H+fRf5ygMTkLnRESl9FD34TqoQwxIUHpc2TT+1qYw7bqdO46h5nnvoaqIywFvPYGcOliCxehv69ERxySOaUYGcJA6NlYZGBzmep006vBKzRsJUMWgcAIl+7q5xMfvIgXhifY//tnufPBQRrJLLLjBvTprwZkDYeb/Sqdu35GY/AkYFpuRGke/QLYblDHuVcJHVvANRetrkCSWpqpbT9VwVolyRxp5sjsQkpSR5LPb1Gaz00zy2wzY6qecGqiwUQ9oX/TRr7yqbdz/zc+wjkbBOLNyParBNShtttjRXPTx1Le2YcmN6JO6dgSsOW9kNXaer9IZrlKtQjAqaJOcUvQUu84Nze/EAf0dRXp2dhBYITpRpMks/zzaJXxyQTRBnrO+6BjS4A6RZMbKe/sa6kQNIavQW03YOl/f0DQCenUsgzMH84pxULI7Xc9wb5f/p3MOSQ3LWOErNbk89e/lb2X76A63aSjEHH81DSf+ebvSa0DgUop5qJzu7n8zdt49xu3sXXTBp45Msqt33+cBEHUQViC/vcLz99jUdvN7PA1wB2h34TkWtQpYQl6L/HpQSvArCUciTBabTBaSxZaayAw1WSqnmBEUPUamWXKcyOTYNUrsFP+NniSex58ht07NnHr9Zfw3fsOMT2dYMoxzjmPqfcSOPoryOqKS65FzB0hGwfOY3r4UkCovN5Q7POp72kwACChIYhD3DwGgkCwsSU0i426GIck1rt4lblQcvCFMT52+4MQBUgpzlVQfIAr9kFll2H0LwJ6KfG28w2N8Xehrgw4Khf9x3mBd4m6JC11xFowxynW+qfpiDCdMRIadCnfW9nlkyh1ZdzUu0LQy3yKLEr5vDyzXE9+s77RMvol8yaXQfk8j1UtkF5mcG43AHGXUOz1+fz/Dv/KJxfN/IEp7mq5vt0GGPAMVITAZ81nLQdq/WkvrrQAbjNoWgLwZ9hw6Zh/tgxVjzHakP9OS6Zd1jDxajH/LNkIARPlDDgM/+fDtP29S85u9Vngr9P2UdbkFTMfvFx2dquR5K40nc5/R3Xjy334opNt5PnP2bgT6rHZBnlxDOCYwZiDnoFJZXbM123OUvxI6AtjyaTmx9CDBsIncqkLtSN50UnP+Npn5CsmhNoRj1UCIHrC0Nn1GGJqgGFiUF8N0fkE7wzZlsdoEFPDbHzMMDV0BOQpQJkYdMyOnvFdMOt2DLn0Z0dhYjCvechTJMde9IHMxPsRI2R1GDvgy33qzlgKIOtVJHUe09gByOogRjDx/rlAVuy/FwmqgGH4oXne6Gxxn4E/0Aw/lKtPUKXYf2+rLhRQe3YUCX+AGGFmxDLyiC/zqV0mlugCWkvsWfjO6UjfeiwjD8PMiEWMIOEPqD07CgStCpdQOP9biKmCGF66T5kZ8XXQV6wmQBwFFKKg/VxNxcNAFsyPI3MayVsBZk7AS/cpiJd+4fxvtRLsVhfE0Bg8gem4DRFDVrf864dzSdO8kTlleLTOsdEax0drDI3WSDO3vJcRqNYTXjpV4/honaFTNUbG62u3CBPBv+6GrG4RMYTF22gMnmjVs2SeYA1798O9H38ETd+JOsvAnoALrsvronOlxUK40D6SzOJWQBQFhtBIG7Sq0szc6qoTV+CFH8PQ/RYxARI9zjU/ei8/v7ZdgZUli7vJyF/BdaFOufD6RfXRJYu7q0Uy1cWl7BXBd8Ox++H5exxiBMwU8ZZLaA49P79/FrximQA7NUa88Z+45DpAqR5UwqLQfTHYZl7SF4SFha3V2wBreKclmLgLjv3Gg/cvG6INe0lefjLH7JbrDygQYmefodA7hGteDapUDykuFXp254fr9LTLLmvyNiaGoAAv/hyO/MLlLtQQd99IMv6zeb3kFTs0zjMxc4BCzxCueRVgmDpsqb1o6NoJhV7PhNo1tJVW0S11XhjRBt/0O/x9OPlHCxIgAcTdn6E5dudyfbLlolXOROMAcc/TuOSDCCVmTmSc+rNgImHD9rlYoXmDXVbrHeo8VcnTg7Dsqw0jD8HhO5T6kG/ySTBOVPkYydhPV2ryrbXN+jqy8e8taLOWtgacs8426+wojD0NJx5W6sfmtVnDRwh7b1pvm3Vxozuq3IJrfBm1m5ZsdJe3Q6HP5y1LNrpnvJrUVml03zrxHW4TdyYa3fNdrN/3nh1bmRz+HJrcsPJVgw1zgdCl/hiYTCpJdbmrBnfT1f/t/KpBy7AcvLqXPW5e52WP3xGWb/5vXPY4jes2bjcwsMp1mycx3Y+fies2/wY7vS61vyqJ4QAAAABJRU5ErkJggg==" alt="" aria-hidden="true">Ninja Icon Tray</span><nav class="langs"><a href="es.html" class="active">ES</a><a href="en.html">EN</a><a href="pt.html">PT</a><span class="div"></span><a href="../terms-of-use/es.html">Licencia</a></nav></div></header>
+    
     <div class="container">
         <h1>Política de Privacidad</h1>
-        <h2 style="margin-top:0;">Ninja Icon Tray</h2>
         <p>Última actualización: 2026</p>
 
         <h2>Resumen</h2>
